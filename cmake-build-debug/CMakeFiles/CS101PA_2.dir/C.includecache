@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/markmedved/CLionProjects/CS101PA_2/apint.c
+stddef.h
+-
+memory.h
+-
+apint.h
+/Users/markmedved/CLionProjects/CS101PA_2/apint.h
+stdlib.h
+/Users/markmedved/CLionProjects/CS101PA_2/stdlib.h
+stdio.h
+-
+
+/Users/markmedved/CLionProjects/CS101PA_2/apint.h
+
+/Users/markmedved/CLionProjects/CS101PA_2/main.c
+stddef.h
+-
+memory.h
+-
+apint.h
+/Users/markmedved/CLionProjects/CS101PA_2/apint.h
+stdlib.h
+/Users/markmedved/CLionProjects/CS101PA_2/stdlib.h
+stdio.h
+-
+
