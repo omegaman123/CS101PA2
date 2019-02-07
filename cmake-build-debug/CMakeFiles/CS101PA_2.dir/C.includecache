@@ -6,27 +6,27 @@
 
 #IncludeRegexTransform: 
 
-/Users/markmedved/CLionProjects/CS101PA_2/apint.c
+/Users/markmedved/CLionProjects/CS101PA_2/apint_s.c
 stddef.h
 -
 memory.h
 -
-apint.h
-/Users/markmedved/CLionProjects/CS101PA_2/apint.h
+apint_s.h
+/Users/markmedved/CLionProjects/CS101PA_2/apint_s.h
 stdlib.h
 /Users/markmedved/CLionProjects/CS101PA_2/stdlib.h
 stdio.h
 -
 
-/Users/markmedved/CLionProjects/CS101PA_2/apint.h
+/Users/markmedved/CLionProjects/CS101PA_2/apint_s.h
 
 /Users/markmedved/CLionProjects/CS101PA_2/main.c
 stddef.h
 -
 memory.h
 -
-apint.h
-/Users/markmedved/CLionProjects/CS101PA_2/apint.h
+apint_s.h
+/Users/markmedved/CLionProjects/CS101PA_2/apint_s.h
 stdlib.h
 /Users/markmedved/CLionProjects/CS101PA_2/stdlib.h
 stdio.h

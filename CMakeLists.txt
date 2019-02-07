@@ -3,4 +3,4 @@ project(CS101PA_2 C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(CS101PA_2 main.c apint.c apint.h)
+add_executable(CS101PA_2 main.c apint_s.c apint_s.h)

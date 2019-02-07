@@ -123,32 +123,32 @@ CS101PA_2/fast:
 	$(MAKE) -f CMakeFiles/CS101PA_2.dir/build.make CMakeFiles/CS101PA_2.dir/build
 .PHONY : CS101PA_2/fast
 
-apint.o: apint.c.o
+apint_s.o: apint_s.c.o
 
-.PHONY : apint.o
+.PHONY : apint_s.o
 
 # target to build an object file
-apint.c.o:
-	$(MAKE) -f CMakeFiles/CS101PA_2.dir/build.make CMakeFiles/CS101PA_2.dir/apint.c.o
-.PHONY : apint.c.o
+apint_s.c.o:
+	$(MAKE) -f CMakeFiles/CS101PA_2.dir/build.make CMakeFiles/CS101PA_2.dir/apint_s.c.o
+.PHONY : apint_s.c.o
 
-apint.i: apint.c.i
+apint_s.i: apint_s.c.i
 
-.PHONY : apint.i
+.PHONY : apint_s.i
 
 # target to preprocess a source file
-apint.c.i:
-	$(MAKE) -f CMakeFiles/CS101PA_2.dir/build.make CMakeFiles/CS101PA_2.dir/apint.c.i
-.PHONY : apint.c.i
+apint_s.c.i:
+	$(MAKE) -f CMakeFiles/CS101PA_2.dir/build.make CMakeFiles/CS101PA_2.dir/apint_s.c.i
+.PHONY : apint_s.c.i
 
-apint.s: apint.c.s
+apint_s.s: apint_s.c.s
 
-.PHONY : apint.s
+.PHONY : apint_s.s
 
 # target to generate assembly for a file
-apint.c.s:
-	$(MAKE) -f CMakeFiles/CS101PA_2.dir/build.make CMakeFiles/CS101PA_2.dir/apint.c.s
-.PHONY : apint.c.s
+apint_s.c.s:
+	$(MAKE) -f CMakeFiles/CS101PA_2.dir/build.make CMakeFiles/CS101PA_2.dir/apint_s.c.s
+.PHONY : apint_s.c.s
 
 main.o: main.c.o
 
@@ -186,9 +186,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... CS101PA_2"
-	@echo "... apint.o"
-	@echo "... apint.i"
-	@echo "... apint.s"
+	@echo "... apint_s.o"
+	@echo "... apint_s.i"
+	@echo "... apint_s.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
