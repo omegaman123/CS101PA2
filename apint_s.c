@@ -113,6 +113,70 @@ apint add(apint a, apint b) {
         *(resOrdered + j) = tmp;
 
     }
+    free(res);
+    apint returnVal = calloc(sizeof(apint), 1);
+    returnVal->digits = resOrdered;
+    returnVal->sign = sgn;
+    returnVal->size = i;
+    return returnVal;
+
+}
+
+apint subtract(apint a, apint b){
+    char sgn;
+
+    if (a->size < b->size) {
+        apint tmp = a;
+        a = b;
+        b = tmp;
+    }
+
+    if (b->sign == '-' && a->sign == '+'){
+        return add(a,b);
+    }
+
+    if (a->sign == '-' && b->sign == '+'){
+        apint returnVal = add(a,b);
+        returnVal->sign = '-';
+        return returnVal;
+    }
+    if (a->sign == '-' && b->sign == '-'){
+      sgn = '-';
+    }
+
+    int *res = calloc(sizeof(int), a->size);
+    int carryout = 0;
+    int counter = 0;
+    int i;
+    for (i = 0; i < a->size; i++) {
+
+        int subVal;
+        if (counter > b->size - 1) {
+            subVal = 0;
+        } else {
+            subVal = *((b->digits + b->size - 1) - counter);
+        }
+        int place = *(a->digits + (a->size - 1 - i));
+        int val = place - subVal - carryout;
+        if ( val < 0){
+            val = (place + 10) - subVal - carryout;
+            carryout = 1;
+        } else {
+            carryout = 0;
+        }
+        counter++;
+        *(res + i) = val;
+
+
+    }
+
+    int *resOrdered = calloc(sizeof(int), i);
+    for (int j = 0; j < i; j++) {
+        int tmp = *((res + i - 1) - j);
+        *(resOrdered + j) = tmp;
+
+    }
+    free(res);
     apint returnVal = calloc(sizeof(apint), 1);
     returnVal->digits = resOrdered;
     returnVal->sign = sgn;
