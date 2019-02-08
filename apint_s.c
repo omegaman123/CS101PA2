@@ -78,11 +78,34 @@ apint add(apint a, apint b) {
         a = b;
         b = tmp;
     }
+    if (a->sign == '+' && b->sign == '-'){
+        b->sign = '+';
+        if (compareTo(a,b) == -1){
+            apint tmp = subtract(b,a);
+            b->sign = '-';
+            tmp->sign = '-';
+            return tmp;
+        }
+        apint tmp = subtract(a,b);
+        b->sign = '-';
+        return tmp;
+    }
+    if (a->sign == '-' && b->sign == '+'){
+        a->sign = '+';
+        if (compareTo(a,b) == 1){
+            apint tmp = subtract(a,b);
+            b->sign = '-';
+            tmp->sign = '-';
+            return tmp;
+        }
+        apint tmp = subtract(b,a);
+        b->sign = '-';
+        return tmp;
+    }
     if (a->sign == '-' && b->sign == '-') {
         sgn = '-';
-    } else {
-        sgn = '+';
     }
+
 
     int *res = calloc(sizeof(int), a->size + 1);
 
@@ -107,9 +130,18 @@ apint add(apint a, apint b) {
         *(res + i++) = carryout;
     }
 
-    int *resOrdered = calloc(sizeof(int), i);
-    for (int j = 0; j < i; j++) {
-        int tmp = *((res + i - 1) - j);
+    int rs;
+    for (rs = i; rs > 1; rs--) {
+        int tmp = *(res + rs - 1);
+        // printf("i: %d, rs: %d, tmp: %d\n", i, rs, tmp);
+        if (*(res + rs - 1) != 0) {
+            break;
+        }
+    }
+
+    int *resOrdered = calloc(sizeof(int), rs);
+    for (int j = 0; j < rs; j++) {
+        int tmp = *((res + rs - 1) - j);
         *(resOrdered + j) = tmp;
 
     }
@@ -117,12 +149,12 @@ apint add(apint a, apint b) {
     apint returnVal = calloc(sizeof(apint), 1);
     returnVal->digits = resOrdered;
     returnVal->sign = sgn;
-    returnVal->size = i;
+    returnVal->size = rs;
     return returnVal;
 
 }
 
-apint subtract(apint a, apint b){
+apint subtract(apint a, apint b) {
     char sgn;
 
     if (a->size < b->size) {
@@ -131,17 +163,25 @@ apint subtract(apint a, apint b){
         b = tmp;
     }
 
-    if (b->sign == '-' && a->sign == '+'){
-        return add(a,b);
+    if (b->sign == '-' && a->sign == '+') {
+        return add(a, b);
     }
 
-    if (a->sign == '-' && b->sign == '+'){
-        apint returnVal = add(a,b);
+    if (a->sign == '-' && b->sign == '+') {
+        a->sign = '+';
+        apint returnVal = add(a, b);
         returnVal->sign = '-';
+        a->sign = '+';
         return returnVal;
     }
-    if (a->sign == '-' && b->sign == '-'){
-      sgn = '-';
+    if (a->sign == '-' && b->sign == '-') {
+        if (compareTo(a,b) == 1){
+            apint tmp = a;
+            a = b;
+            b = tmp;
+        } else{
+            sgn = '-';
+        }
     }
 
     int *res = calloc(sizeof(int), a->size);
@@ -158,7 +198,7 @@ apint subtract(apint a, apint b){
         }
         int place = *(a->digits + (a->size - 1 - i));
         int val = place - subVal - carryout;
-        if ( val < 0){
+        if (val < 0) {
             val = (place + 10) - subVal - carryout;
             carryout = 1;
         } else {
@@ -166,13 +206,20 @@ apint subtract(apint a, apint b){
         }
         counter++;
         *(res + i) = val;
-
-
     }
 
-    int *resOrdered = calloc(sizeof(int), i);
-    for (int j = 0; j < i; j++) {
-        int tmp = *((res + i - 1) - j);
+    int rs;
+    for (rs = i; rs > 1; rs--) {
+        int tmp = *(res + rs - 1);
+        // printf("i: %d, rs: %d, tmp: %d\n", i, rs, tmp);
+        if (*(res + rs - 1) != 0) {
+            break;
+        }
+    }
+
+    int *resOrdered = calloc(sizeof(int), rs);
+    for (int j = 0; j < rs; j++) {
+        int tmp = *((res + rs - 1) - j);
         *(resOrdered + j) = tmp;
 
     }
@@ -180,7 +227,7 @@ apint subtract(apint a, apint b){
     apint returnVal = calloc(sizeof(apint), 1);
     returnVal->digits = resOrdered;
     returnVal->sign = sgn;
-    returnVal->size = i;
+    returnVal->size = rs;
     return returnVal;
 
 }
@@ -203,5 +250,46 @@ void free_apint(apint *num) {
     free((*num)->digits);
     free(*num);
     *num = NULL;
+
+}
+
+int compareTo(apint a, apint b) {
+    if (a->sign == '-' && b->sign == '+') {
+        return -1;
+
+    } else if (a->sign == '+' && b->sign == '-') {
+        return 1;
+    } else if (a->sign == '-' && b->sign == '-') {
+        if (a->size > b->size) {
+            return -1;
+        } else if (a->size < b->size) {
+            return 1;
+        } else {
+            for (int i = 0; i < a->size; i++) {
+                if (*(a->digits + i) > *(b->digits + i)) {
+                    return -1;
+                } else if (*(a->digits + i) < *(b->digits + i)) {
+                    return 1;
+                }
+            }
+            return 0;
+        }
+    } else {
+        if (a->size > b->size) {
+            return 1;
+        } else if (a->size < b->size) {
+            return -1;
+        } else {
+            for (int i = 0; i < a->size; i++) {
+                if (*(a->digits + i) > *(b->digits + i)) {
+                    return 1;
+                } else if (*(a->digits + i) < *(b->digits + i)) {
+                    return -1;
+                }
+
+            }
+        }
+        return 0;
+    }
 
 }

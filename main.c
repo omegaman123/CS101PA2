@@ -31,6 +31,16 @@ void testSubtractFunc(char* numOne, char* numTwo){
     free_apint(&res);
 }
 
+void testCompareToFunction(char* numOne, char* numTwo){
+
+    apint b = apintFromString(numOne);
+    apint c = apintFromString(numTwo);
+    int res = compareTo(b,c);
+    printf("%s compared to %s is %d\n",numOne, numTwo, res);
+    free_apint(&b);
+    free_apint(&c);
+}
+
 
 
 int main() {
@@ -51,13 +61,16 @@ int main() {
     print(a);
     free_apint(&a);
 
-
+    printf("\n");
     testAddFunc("123", "67");
     testAddFunc("11", "9");
     testAddFunc("99", "99");
     testAddFunc("-20", "-10");
     testAddFunc("123456789","987654321");
-
+    testAddFunc("-20","10");
+    testAddFunc("20","-21");
+    testAddFunc("20","-19");
+    printf("\n");
     testSubtractFunc("20","5");
     testSubtractFunc("20","10");
     testSubtractFunc("20","20");
@@ -67,6 +80,16 @@ int main() {
     testSubtractFunc("-10","20");
     testSubtractFunc("-30","19");
     testSubtractFunc("-20","-10");
+    testSubtractFunc("-20","-30");
+    printf("\n");
+    testCompareToFunction("20","10");
+    testCompareToFunction("10","20");
+    testCompareToFunction("10","10");
+    testCompareToFunction("200","10");
+    testCompareToFunction("-20","20");
+    testCompareToFunction("-20","-10");
+    testCompareToFunction("20","-100");
+
 
     return 0;
 }

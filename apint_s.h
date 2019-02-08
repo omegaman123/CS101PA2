@@ -14,5 +14,6 @@ extern void print(apint num);
 extern void free_apint(apint *num);
 extern apint add(apint a, apint b);
 extern apint subtract(apint a, apint b);
+extern int compareTo(apint a, apint b);
 
 #endif //CS101PA_2_APINT_H
