@@ -45,6 +45,48 @@ struct apint_s *apintFromString(char *num) {
     return s;
 };
 
+
+
+struct apint_s *apintFromInt(int num){
+    if (num == NULL) {
+        return 0;
+    }
+    char sgn = '+';
+    apint s = calloc(sizeof(apint),1);
+    if (num < 0){
+       sgn = '-';
+       num = abs(num);
+    }
+    s->size = countDigits(num);
+    s->digits = calloc(sizeof(int),s->size);
+    int digits[s->size];
+    int c = 0;
+    int n = num;
+    while(n!=0){
+        digits[c] = n%10;
+        n /= 10;
+        c++;
+    }
+    c = 0;
+    for (int i = s->size -1; i >= 0 ; i--) {
+     *(s->digits + c) = digits[i];
+      c++;
+    }
+    s->sign = sgn;
+
+    return s;
+};
+
+int countDigits(int n){
+    int count = 0;
+    while(n != 0)
+    {
+        n /= 10;
+        ++count;
+    }
+    return count;
+}
+
 char *toString(apint num) {
 
 
@@ -229,6 +271,65 @@ apint subtract(apint a, apint b) {
     returnVal->sign = sgn;
     returnVal->size = rs;
     return returnVal;
+
+}
+
+
+apint multiply(apint a, apint b){
+    if (a == NULL || b == NULL){
+        return NULL;
+    }
+    char sgn;
+    if (a->sign == b->sign){
+        sgn = '+';
+    } else{
+      sgn = '-';
+    }
+
+    if (a->size < b->size){
+        apint tmp = a;
+        a = b;
+        b = tmp;
+    }
+
+    apint res =  apintFromString("0");
+    int size = a->size;
+    res->sign = sgn;
+    int place = 0;
+    int carryout = 0;
+    for (int i = 0; i <= b->size - 1; i++){
+        int currentPlace[place+1];
+        for (int j = 0; j <= a->size - 1; j++) {
+            for (int k = 0; k < place; k++) {
+                currentPlace[a->size - 1 - k] = 0;
+
+            }
+            int l;
+            for ( l = 0; l <= a->size-1; l++) {
+                int product = *(b->digits + b->size - 1 - i) * *(a->digits+ a->size - 1 - l);
+                int val = product%10;
+                currentPlace[(a->size ) - l] = val + carryout;
+                carryout = product/10;
+            }
+            int k;
+            if (carryout > 0){
+                currentPlace[(a->size ) - l] = carryout;
+                size++;
+            } else {
+                for (k = 0; k < a->size+i; k++) {
+                    currentPlace[k] = currentPlace[k+1];
+
+                }
+
+            }
+        }
+        apint resTemp = apintFromString("0");
+        resTemp->size = size;
+        resTemp->digits = currentPlace;
+        res = add(res,resTemp);
+    place++;
+    }
+    return res;
 
 }
 

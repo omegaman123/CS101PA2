@@ -31,6 +31,22 @@ void testSubtractFunc(char* numOne, char* numTwo){
     free_apint(&res);
 }
 
+
+void testMultiplyFunc(char* numOne, char* numTwo){
+    char* s;
+    apint b = apintFromString(numOne);
+    apint c = apintFromString(numTwo);
+    apint res = multiply(b,c);
+    s = toString(res);
+    printf("%s * %s = %s\n",numOne, numTwo, s);
+    free(s);
+    free_apint(&b);
+    free_apint(&c);
+    free_apint(&res);
+
+
+}
+
 void testCompareToFunction(char* numOne, char* numTwo){
 
     apint b = apintFromString(numOne);
@@ -53,8 +69,21 @@ int main() {
     print(a);
     free_apint(&a);
 
+    a = apintFromInt(12211);
+    s  = toString(a);
+    printf("%s\n",s);
+    free(s);
+    print(a);
+    free_apint(&a);
 
     a = apintFromString("-12345");
+    s  = toString(a);
+    printf("%s\n",s);
+    free(s);
+    print(a);
+    free_apint(&a);
+
+    a = apintFromString("0");
     s  = toString(a);
     printf("%s\n",s);
     free(s);
@@ -89,7 +118,16 @@ int main() {
     testCompareToFunction("-20","20");
     testCompareToFunction("-20","-10");
     testCompareToFunction("20","-100");
-
+    printf("\n");
+    testMultiplyFunc("2","4");
+    testMultiplyFunc("3","5");
+    testMultiplyFunc("9","2");
+    testMultiplyFunc("9","9");
+    testMultiplyFunc("11","2");
+    testMultiplyFunc("12","2");
+    testMultiplyFunc("20","20");
+    testMultiplyFunc("200","2");
+    testMultiplyFunc("123","45");
 
     return 0;
 }
