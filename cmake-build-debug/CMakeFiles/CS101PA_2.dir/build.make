@@ -57,28 +57,28 @@ include CMakeFiles/CS101PA_2.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/CS101PA_2.dir/flags.make
 
-CMakeFiles/CS101PA_2.dir/main.c.o: CMakeFiles/CS101PA_2.dir/flags.make
-CMakeFiles/CS101PA_2.dir/main.c.o: ../main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/markmedved/CLionProjects/CS101PA_2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/CS101PA_2.dir/main.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/CS101PA_2.dir/main.c.o   -c /Users/markmedved/CLionProjects/CS101PA_2/main.c
+CMakeFiles/CS101PA_2.dir/test.c.o: CMakeFiles/CS101PA_2.dir/flags.make
+CMakeFiles/CS101PA_2.dir/test.c.o: ../test.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/markmedved/CLionProjects/CS101PA_2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/CS101PA_2.dir/test.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/CS101PA_2.dir/test.c.o   -c /Users/markmedved/CLionProjects/CS101PA_2/test.c
 
-CMakeFiles/CS101PA_2.dir/main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/CS101PA_2.dir/main.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/markmedved/CLionProjects/CS101PA_2/main.c > CMakeFiles/CS101PA_2.dir/main.c.i
+CMakeFiles/CS101PA_2.dir/test.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/CS101PA_2.dir/test.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/markmedved/CLionProjects/CS101PA_2/test.c > CMakeFiles/CS101PA_2.dir/test.c.i
 
-CMakeFiles/CS101PA_2.dir/main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/CS101PA_2.dir/main.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/markmedved/CLionProjects/CS101PA_2/main.c -o CMakeFiles/CS101PA_2.dir/main.c.s
+CMakeFiles/CS101PA_2.dir/test.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/CS101PA_2.dir/test.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/markmedved/CLionProjects/CS101PA_2/test.c -o CMakeFiles/CS101PA_2.dir/test.c.s
 
-CMakeFiles/CS101PA_2.dir/main.c.o.requires:
+CMakeFiles/CS101PA_2.dir/test.c.o.requires:
 
-.PHONY : CMakeFiles/CS101PA_2.dir/main.c.o.requires
+.PHONY : CMakeFiles/CS101PA_2.dir/test.c.o.requires
 
-CMakeFiles/CS101PA_2.dir/main.c.o.provides: CMakeFiles/CS101PA_2.dir/main.c.o.requires
-	$(MAKE) -f CMakeFiles/CS101PA_2.dir/build.make CMakeFiles/CS101PA_2.dir/main.c.o.provides.build
-.PHONY : CMakeFiles/CS101PA_2.dir/main.c.o.provides
+CMakeFiles/CS101PA_2.dir/test.c.o.provides: CMakeFiles/CS101PA_2.dir/test.c.o.requires
+	$(MAKE) -f CMakeFiles/CS101PA_2.dir/build.make CMakeFiles/CS101PA_2.dir/test.c.o.provides.build
+.PHONY : CMakeFiles/CS101PA_2.dir/test.c.o.provides
 
-CMakeFiles/CS101PA_2.dir/main.c.o.provides.build: CMakeFiles/CS101PA_2.dir/main.c.o
+CMakeFiles/CS101PA_2.dir/test.c.o.provides.build: CMakeFiles/CS101PA_2.dir/test.c.o
 
 
 CMakeFiles/CS101PA_2.dir/apint_s.c.o: CMakeFiles/CS101PA_2.dir/flags.make
@@ -107,13 +107,13 @@ CMakeFiles/CS101PA_2.dir/apint_s.c.o.provides.build: CMakeFiles/CS101PA_2.dir/ap
 
 # Object files for target CS101PA_2
 CS101PA_2_OBJECTS = \
-"CMakeFiles/CS101PA_2.dir/main.c.o" \
+"CMakeFiles/CS101PA_2.dir/test.c.o" \
 "CMakeFiles/CS101PA_2.dir/apint_s.c.o"
 
 # External object files for target CS101PA_2
 CS101PA_2_EXTERNAL_OBJECTS =
 
-CS101PA_2: CMakeFiles/CS101PA_2.dir/main.c.o
+CS101PA_2: CMakeFiles/CS101PA_2.dir/test.c.o
 CS101PA_2: CMakeFiles/CS101PA_2.dir/apint_s.c.o
 CS101PA_2: CMakeFiles/CS101PA_2.dir/build.make
 CS101PA_2: CMakeFiles/CS101PA_2.dir/link.txt
@@ -125,7 +125,7 @@ CMakeFiles/CS101PA_2.dir/build: CS101PA_2
 
 .PHONY : CMakeFiles/CS101PA_2.dir/build
 
-CMakeFiles/CS101PA_2.dir/requires: CMakeFiles/CS101PA_2.dir/main.c.o.requires
+CMakeFiles/CS101PA_2.dir/requires: CMakeFiles/CS101PA_2.dir/test.c.o.requires
 CMakeFiles/CS101PA_2.dir/requires: CMakeFiles/CS101PA_2.dir/apint_s.c.o.requires
 
 .PHONY : CMakeFiles/CS101PA_2.dir/requires

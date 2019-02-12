@@ -4,6 +4,6 @@
 CMakeFiles/CS101PA_2.dir/apint_s.c.o: ../apint_s.c
 CMakeFiles/CS101PA_2.dir/apint_s.c.o: ../apint_s.h
 
-CMakeFiles/CS101PA_2.dir/main.c.o: ../apint_s.h
-CMakeFiles/CS101PA_2.dir/main.c.o: ../main.c
+CMakeFiles/CS101PA_2.dir/test.c.o: ../apint_s.h
+CMakeFiles/CS101PA_2.dir/test.c.o: ../test.c
 

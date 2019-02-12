@@ -150,32 +150,32 @@ apint_s.c.s:
 	$(MAKE) -f CMakeFiles/CS101PA_2.dir/build.make CMakeFiles/CS101PA_2.dir/apint_s.c.s
 .PHONY : apint_s.c.s
 
-main.o: main.c.o
+test.o: test.c.o
 
-.PHONY : main.o
+.PHONY : test.o
 
 # target to build an object file
-main.c.o:
-	$(MAKE) -f CMakeFiles/CS101PA_2.dir/build.make CMakeFiles/CS101PA_2.dir/main.c.o
-.PHONY : main.c.o
+test.c.o:
+	$(MAKE) -f CMakeFiles/CS101PA_2.dir/build.make CMakeFiles/CS101PA_2.dir/test.c.o
+.PHONY : test.c.o
 
-main.i: main.c.i
+test.i: test.c.i
 
-.PHONY : main.i
+.PHONY : test.i
 
 # target to preprocess a source file
-main.c.i:
-	$(MAKE) -f CMakeFiles/CS101PA_2.dir/build.make CMakeFiles/CS101PA_2.dir/main.c.i
-.PHONY : main.c.i
+test.c.i:
+	$(MAKE) -f CMakeFiles/CS101PA_2.dir/build.make CMakeFiles/CS101PA_2.dir/test.c.i
+.PHONY : test.c.i
 
-main.s: main.c.s
+test.s: test.c.s
 
-.PHONY : main.s
+.PHONY : test.s
 
 # target to generate assembly for a file
-main.c.s:
-	$(MAKE) -f CMakeFiles/CS101PA_2.dir/build.make CMakeFiles/CS101PA_2.dir/main.c.s
-.PHONY : main.c.s
+test.c.s:
+	$(MAKE) -f CMakeFiles/CS101PA_2.dir/build.make CMakeFiles/CS101PA_2.dir/test.c.s
+.PHONY : test.c.s
 
 # Help Target
 help:
@@ -189,9 +189,9 @@ help:
 	@echo "... apint_s.o"
 	@echo "... apint_s.i"
 	@echo "... apint_s.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... test.o"
+	@echo "... test.i"
+	@echo "... test.s"
 .PHONY : help
 
 

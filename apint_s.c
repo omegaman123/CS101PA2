@@ -45,12 +45,18 @@ struct apint_s *apintFromString(char *num) {
     return s;
 };
 
+int countDigits(int n){
+    int count = 0;
+    while(n != 0)
+    {
+        n /= 10;
+        ++count;
+    }
+    return count;
+}
 
 
 struct apint_s *apintFromInt(int num){
-    if (num == NULL) {
-        return 0;
-    }
     char sgn = '+';
     apint s = calloc(sizeof(apint),1);
     if (num < 0){
@@ -76,16 +82,6 @@ struct apint_s *apintFromInt(int num){
 
     return s;
 };
-
-int countDigits(int n){
-    int count = 0;
-    while(n != 0)
-    {
-        n /= 10;
-        ++count;
-    }
-    return count;
-}
 
 char *toString(apint num) {
 
@@ -114,7 +110,7 @@ char *toString(apint num) {
 
 apint add(apint a, apint b) {
 
-    char sgn;
+    char sgn = '+';
     if (a->size < b->size) {
         apint tmp = a;
         a = b;
@@ -174,7 +170,7 @@ apint add(apint a, apint b) {
 
     int rs;
     for (rs = i; rs > 1; rs--) {
-        int tmp = *(res + rs - 1);
+        // int tmp = *(res + rs - 1);
         // printf("i: %d, rs: %d, tmp: %d\n", i, rs, tmp);
         if (*(res + rs - 1) != 0) {
             break;
@@ -197,7 +193,7 @@ apint add(apint a, apint b) {
 }
 
 apint subtract(apint a, apint b) {
-    char sgn;
+    char sgn = '+';
 
     if (a->size < b->size) {
         apint tmp = a;
@@ -206,7 +202,11 @@ apint subtract(apint a, apint b) {
     }
 
     if (b->sign == '-' && a->sign == '+') {
-        return add(a, b);
+
+        b->sign = '+';
+        apint res = add(a, b);
+        b->sign = '-';
+        return res;
     }
 
     if (a->sign == '-' && b->sign == '+') {
@@ -252,7 +252,7 @@ apint subtract(apint a, apint b) {
 
     int rs;
     for (rs = i; rs > 1; rs--) {
-        int tmp = *(res + rs - 1);
+        // int tmp = *(res + rs - 1);
         // printf("i: %d, rs: %d, tmp: %d\n", i, rs, tmp);
         if (*(res + rs - 1) != 0) {
             break;
@@ -294,41 +294,46 @@ apint multiply(apint a, apint b){
 
     apint res =  apintFromString("0");
     int size = a->size;
-    res->sign = sgn;
     int place = 0;
     int carryout = 0;
     for (int i = 0; i <= b->size - 1; i++){
-        int currentPlace[place+1];
-        for (int j = 0; j <= a->size - 1; j++) {
-            for (int k = 0; k < place; k++) {
-                currentPlace[a->size - 1 - k] = 0;
 
-            }
-            int l;
-            for ( l = 0; l <= a->size-1; l++) {
-                int product = *(b->digits + b->size - 1 - i) * *(a->digits+ a->size - 1 - l);
-                int val = product%10;
-                currentPlace[(a->size ) - l] = val + carryout;
-                carryout = product/10;
-            }
-            int k;
-            if (carryout > 0){
-                currentPlace[(a->size ) - l] = carryout;
-                size++;
-            } else {
-                for (k = 0; k < a->size+i; k++) {
-                    currentPlace[k] = currentPlace[k+1];
-
-                }
-
-            }
+        int *currentPlace = calloc(sizeof(int), place + a->size + 1);
+        for (int k = 0; k < place; k++) {
+            currentPlace[a->size - 1 - k] = 0;
         }
+
+        int l;
+        for (l = 0; l <= a->size - 1; l++) {
+            int product = *(b->digits + b->size - 1 - i) * *(a->digits + a->size - 1 - l);
+            int val = product % 10;
+            currentPlace[(a->size) - l] = val + carryout;
+            carryout = product / 10;
+        }
+        int k;
+        if (carryout > 0) {
+            currentPlace[(a->size) - l] = carryout;
+            size++;
+        } else {
+            for (k = 0; k < a->size + i; k++) {
+                currentPlace[k] = currentPlace[k + 1];
+            }
+            currentPlace[k] = 0;
+
+        }
+
         apint resTemp = apintFromString("0");
-        resTemp->size = size;
+        resTemp->size = size + place;
         resTemp->digits = currentPlace;
-        res = add(res,resTemp);
-    place++;
+        apint res1 = add(res, resTemp);
+
+        free_apint(&resTemp);
+        free(res);
+        res = res1;
+        place++;
     }
+
+    res->sign = sgn;
     return res;
 
 }

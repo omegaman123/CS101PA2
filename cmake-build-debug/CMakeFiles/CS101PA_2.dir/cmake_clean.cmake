@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/CS101PA_2.dir/main.c.o"
+  "CMakeFiles/CS101PA_2.dir/test.c.o"
   "CMakeFiles/CS101PA_2.dir/apint_s.c.o"
   "CS101PA_2.pdb"
   "CS101PA_2"

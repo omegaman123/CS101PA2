@@ -82,7 +82,7 @@
 		<Unit filename="/Users/markmedved/CLionProjects/CS101PA_2/apint_s.h">
 			<Option target="CS101PA_2"/>
 		</Unit>
-		<Unit filename="/Users/markmedved/CLionProjects/CS101PA_2/main.c">
+		<Unit filename="/Users/markmedved/CLionProjects/CS101PA_2/test.c">
 			<Option target="CS101PA_2"/>
 		</Unit>
 		<Unit filename="/Users/markmedved/CLionProjects/CS101PA_2/CMakeLists.txt">
