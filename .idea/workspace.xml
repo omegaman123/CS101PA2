@@ -12,9 +12,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0052a3a8-a4f0-490e-b1c5-5d7b79074ed4" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/apint_s.c" beforeDir="false" afterPath="$PROJECT_DIR$/apint_s.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apint_s.h" beforeDir="false" afterPath="$PROJECT_DIR$/apint_s.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.c" beforeDir="false" afterPath="$PROJECT_DIR$/test.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CS101PA_2.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CS101PA_2.dir/C.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CS101PA_2.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CS101PA_2.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CS101PA_2.dir/apint_s.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CS101PA_2.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CS101PA_2.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CS101PA_2.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CS101PA_2.dir/cmake_clean.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CS101PA_2.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CS101PA_2.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CS101PA_2.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CS101PA_2.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CS101PA_2.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CS101PA_2.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CS101PA_2.dir/test.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CS101PA_2.dir/test.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CS101PA_2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CS101PA_2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CS101PA_2.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CS101PA_2.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,7 +45,7 @@
       <file leaf-file-name="test.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1626">
+            <state relative-caret-position="-1461">
               <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
@@ -44,11 +54,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="apint_s.c" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apint_s.c">
+      <file leaf-file-name="apint.c" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/apint.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="775">
-              <caret line="429" column="5" selection-start-line="429" selection-start-column="5" selection-end-line="429" selection-end-column="5" />
+            <state relative-caret-position="175">
+              <caret line="389" column="1" selection-end-line="430" selection-end-column="1" />
               <folding>
                 <element signature="e#44#63#0" expanded="true" />
               </folding>
@@ -56,11 +66,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="apint_s.h" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/apint_s.h">
+      <file leaf-file-name="apint.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/apint.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
+            <state relative-caret-position="450">
+              <caret line="30" column="66" selection-start-line="30" selection-start-column="66" selection-end-line="30" selection-end-column="66" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Makefile" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Makefile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -74,11 +93,12 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/apint.c" />
-        <option value="$PROJECT_DIR$/apint.h" />
         <option value="$PROJECT_DIR$/main.c" />
         <option value="$PROJECT_DIR$/test.c" />
         <option value="$PROJECT_DIR$/apint_s.c" />
         <option value="$PROJECT_DIR$/apint_s.h" />
+        <option value="$PROJECT_DIR$/apint.h" />
+        <option value="$PROJECT_DIR$/Makefile" />
       </list>
     </option>
   </component>
@@ -153,16 +173,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1549498696530</updated>
-      <workItem from="1549498697811" duration="40002000" />
+      <workItem from="1549498697811" duration="41469000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40002000" />
+    <option name="totallyTimeSpent" value="41469000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="28" y="27" width="1726" height="1047" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Messages" weight="0.35814455" />
@@ -171,9 +190,9 @@
       <window_info anchor="bottom" id="Run" order="2" weight="0.116504855" />
       <window_info anchor="bottom" id="Version Control" weight="0.32923368" />
       <window_info anchor="bottom" id="Thumbnails" weight="0.32923368" />
-      <window_info anchor="bottom" id="Terminal" weight="0.32734153" />
-      <window_info content_ui="combo" x="815" y="404" width="290" height="415" id="Project" order="0" sideWeight="0.6534467" side_tool="true" type="WINDOWED" weight="0.12111638" />
-      <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.32901832" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.5458468" />
+      <window_info content_ui="combo" x="484" y="49" width="290" height="415" id="Project" order="0" sideWeight="0.6534467" side_tool="true" visible="true" weight="0.12082111" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32901832" />
       <window_info id="Structure" order="1" sideWeight="0.34655336" side_tool="true" weight="0.18342644" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.6558792" />
       <window_info id="Favorites" side_tool="true" />
@@ -221,7 +240,7 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/apint_s.c</url>
+          <url>file://$PROJECT_DIR$/apint.c</url>
           <line>325</line>
           <option name="timeStamp" value="38" />
         </line-breakpoint>
@@ -296,7 +315,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1626">
+        <state relative-caret-position="-1461">
           <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
@@ -304,20 +323,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apint_s.c">
+    <entry file="file://$PROJECT_DIR$/apint.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="775">
-          <caret line="429" column="5" selection-start-line="429" selection-start-column="5" selection-end-line="429" selection-end-column="5" />
+        <state relative-caret-position="175">
+          <caret line="389" column="1" selection-end-line="430" selection-end-column="1" />
           <folding>
             <element signature="e#44#63#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apint_s.h">
+    <entry file="file://$PROJECT_DIR$/apint.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
+        <state relative-caret-position="450">
+          <caret line="30" column="66" selection-start-line="30" selection-start-column="66" selection-end-line="30" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Makefile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
         </state>
       </provider>
     </entry>
