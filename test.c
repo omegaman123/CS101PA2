@@ -69,8 +69,17 @@ void testCompareToFunction(char *numOne, char *numTwo, int expected) {
 
 int main() {
 
+    printf("Testing toString method and print method for apints.\n");
     apint a = apintFromString("12345");
     char *s = toString(a);
+    printf("%s\n", s);
+    free(s);
+    print(a);
+    free_apint(&a);
+
+    printf("Printing empty apint. Expecting empty lines\n");
+    a = apintDefault();
+    s = toString(a);
     printf("%s\n", s);
     free(s);
     print(a);

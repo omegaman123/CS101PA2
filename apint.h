@@ -10,6 +10,10 @@ typedef struct apint *apint;
 // Caller is responsible for freeing the returned apint using free_apint();
 extern apint apintFromString(char *num);
 
+// Default constructor - return an empty apint.
+// Caller is responsible for freeing the returned apint using free_apint();
+extern apint apintDefault();
+
 // Return string representation of passed in apint.
 // Caller is responsible for freeing the returned string.
 extern char *toString(apint num);

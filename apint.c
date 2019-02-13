@@ -16,6 +16,14 @@ struct apint {
     int *digits;
 };
 
+struct apint *apintDefault() {
+    apint s = calloc(sizeof(apint), 1);
+    s->size = 0;
+    s->sign = '+';
+    s->digits = NULL;
+    return s;
+};
+
 
 // Create an apint from a single string and optional sign character.
 struct apint *apintFromString(char *num) {
